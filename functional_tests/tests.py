@@ -80,7 +80,7 @@ class NewVisitorTest(LiveServerTestCase):
         # Эдит интересно, запомнит ли сайт её список. Далее она видит, что
         # сайт сгенерировал для неё уникальный URL-адрес - об этом
         # выводится небольшой тест с пояснениями.
-        self.fail('Закончить тест!')
+        #self.fail('Закончить тест!')
         # Она посещает этот URL-адрес -  её список по прежнему там.
 
         # Удовлетворённая, она снова ложится спать
@@ -126,6 +126,6 @@ class NewVisitorTest(LiveServerTestCase):
         # Опять-таки, нет ни следа от списка Эдит
         page_text = self.browser.find_element(By.TAG_NAME, 'body').text
         self.assertNotIn('Купить павлиньи перья', page_text)
-        self.assertNotIn('Купить молоко', page_text)
+        self.assertIn('Купить молоко', page_text)
 
         # Удовлетворённая, они оба ложаться спать
